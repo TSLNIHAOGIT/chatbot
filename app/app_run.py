@@ -59,9 +59,8 @@ def background_process():
             if 'duplicate' in str(e):
                 e_str = e.details['errmsg']
                 dup_id=re.search('\{ : "(.*)" \}',e_str).group(1)
-                print('_id_',dup_id)
+                print('重复查询同一句话,存储时使用相同的_id_',dup_id)
                 mongo_db.update_dup_query( dup_id, str(result))
-                print('exception',e.details['errmsg'])
                 return str(result)
 
             else:
