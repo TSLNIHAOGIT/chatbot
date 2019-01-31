@@ -33,7 +33,7 @@ def get_data(sentence):
 def index0():
     return render_template(
                            # "index0.html",
-                           "index.html",
+                           "test.html",
                            )
 @app.route("/predict", methods= ["POST"])
 def background_process():
